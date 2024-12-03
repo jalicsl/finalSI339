@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lofoten</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/placeStyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <span id="closeSidebar" onclick="closeSidebar()">&times;</span>
+      <a href="../index.html">Home</a>
+      <a href="budapest.html">Budapest</a>
+      <a href="tokyo.html">Tokyo</a>
+      <a href="maui.html">Maui</a>
+      <a href="barcelona.html">Barcelona</a>
+    </div>
+
+    <!-- Header -->
+    <div id="header">
+      <h1>Lofoten, Norway</h1>
+      <button id="button2" onclick="openSidebar()">Menu 
+        <i class="fa fa-bars"></i>
+      </button>
+      <!-- <p>
+        Budapest holds signifigant meaning to me because it is where my
+        grandparents immigrated from before I was born. I plan on visiting to
+        learn more about my families culture and to meet family members that
+        still live there.
+      </p> -->
+      <p>
+        <button id="button1" onclick="toggleGridPadding()">
+          Postcard Format
+        </button>
+      </p>
+      <div class="fun-facts">
+        <button id="button1" onclick="toggleFunFacts()">Fun Facts</button>
+        <ul id="funFactsList" style="display: none">
+          <li>
+            Lofoten lies above the Arctic Circle, yet it experiences
+            surprisingly mild winters due to the Gulf Stream. This unique
+            climate makes it one of the warmest regions at its latitude in the
+            world.
+          </li>
+          <li>
+            During the summer months, Lofoten experiences the Midnight Sun,
+            where the sun doesn't set for several weeks. Conversely, in winter,
+            the Polar Night blankets the region in darkness for weeks at a time.
+          </li>
+          <li>
+            Lofoten is famous for its jaw-dropping landscapes, featuring rugged
+            mountains, deep fjords, and white-sand beaches. The peaks rise
+            dramatically straight out of the ocean.
+          </li>
+          <li>
+            Lofoten is home to the Lofotr Viking Museum, where you can explore a
+            reconstructed Viking longhouse, learn about Viking culture, and even
+            try traditional Viking food.
+          </li>
+          <li>
+            Lofoten is known for its cod fishing industry, especially during the
+            winter fishing season when Arctic cod, or skrei, migrate to the
+            area. Traditional wooden drying racks, where cod is hung to make
+            stockfish, are an iconic part of the Lofoten landscape.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Photo Grid -->
+    <div id="photoGrid" class="photo-grid">
+      <img src="../images/lofo.jpg" alt="Photo 1" />
+      <img src="../images/lofo1.jpg" alt="Photo 2" />
+      <img src="../images/lofo2.jpg" alt="Photo 3" />
+      <img src="../images/lofo3.jpg" alt="Photo 4" />
+      <img src="../images/lofo4.jpg" alt="Photo 5" />
+      <img src="../images/lofo5.jpg" alt="Photo 6" />
+      <img src="../images/lofo6.jpg" alt="Photo 7" />
+      <img src="../images/lofo7.jpg" alt="Photo 8" />
+      <img src="../images/lofo8.jpg" alt="Photo 9" />
+    </div>
+
+    <script>
+      // Open the sidebar
+      function openSidebar() {
+        document.getElementById("sidebar").style.width = "250px";
+      }
+
+      // Close the sidebar
+      function closeSidebar() {
+        document.getElementById("sidebar").style.width = "0";
+      }
+
+      // Toggle grid padding
+      function toggleGridPadding() {
+        const grid = document.getElementById("photoGrid");
+        if (grid.classList.contains("photo-grid-padding")) {
+          grid.classList.remove("photo-grid-padding");
+          document.getElementById("button1").innerText = "Postcard Format";
+        } else {
+          grid.classList.add("photo-grid-padding");
+          document.getElementById("button1").innerText = "Portfolio Format";
+        }
+      }
+
+      // Toggle fun facts visibility
+      function toggleFunFacts() {
+        const funFactsList = document.getElementById("funFactsList");
+        if (funFactsList.style.display === "none") {
+          funFactsList.style.display = "block";
+        } else {
+          funFactsList.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

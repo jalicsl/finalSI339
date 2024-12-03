@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Barcelona</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/placeStyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <span id="closeSidebar" onclick="closeSidebar()">&times;</span>
+      <a href="../index.html">Home</a>
+      <a href="budapest.html">Budapest</a>
+      <a href="Lofoten.html">Lofoten</a>
+      <a href="maui.html">Maui</a>
+      <a href="tokyo.html">Tokyo</a>
+    </div>
+
+    <!-- Header -->
+    <div id="header">
+      <h1>Barcelona, Spain</h1>
+      <button id="button2" onclick="openSidebar()">Menu 
+        <i class="fa fa-bars"></i>
+      </button>
+      <p>
+        <button id="button1" onclick="toggleGridPadding()">
+          Postcard Format
+        </button>
+      </p>
+      <div class="fun-facts">
+        <button id="button1" onclick="toggleFunFacts()">Fun Facts</button>
+        <ul id="funFactsList" style="display: none">
+          <li>
+            Barcelona is famous for its stunning architecture, especially the works of Antoni Gaudí. His iconic designs include the unfinished Sagrada Familia church, Park Güell, and Casa Batlló. These landmarks showcase his unique blend of modernism and nature-inspired forms.
+          </li>
+          <li>
+            The Hospital de Sant Pau in Barcelona is one of the oldest hospitals in the world, and it's also a UNESCO World Heritage site. Built in the early 20th century, its beautiful art-nouveau architecture is considered a hidden gem in the city.
+          </li>
+          <li>
+            FC Barcelona, often referred to simply as “Barça,” is not just a football club but a symbol of Catalan pride. The club’s motto, "Més que un club" (More than a club), reflects its cultural and political significance in Catalonia.
+          </li>
+          <li>
+            The Magic Fountain, located near the Montjuïc Hill, is famous for its evening light and music shows. The fountain's spectacular water displays are a popular attraction for both tourists and locals, adding a magical atmosphere to the city.
+          </li>
+          <li>
+            La Rambla, a tree-lined street in the heart of Barcelona, is one of the city's most famous landmarks. It's a lively, bustling promenade that stretches from Plaça de Catalunya to the waterfront, offering a vibrant mix of shops, street performers, and eateries.
+        </ul>
+      </div>
+    </div>
+
+    <!-- Photo Grid -->
+    <div id="photoGrid" class="photo-grid">
+      <img src="../images/barc.jpg" alt="Photo 1" />
+      <img src="../images/barc1.jpg" alt="Photo 2" />
+      <img src="../images/barc2.jpg" alt="Photo 3" />
+      <img src="../images/barc3.jpg" alt="Photo 4" />
+      <img src="../images/barc4.jpg" alt="Photo 5" />
+      <img src="../images/barc5.jpg" alt="Photo 6" />
+      <img src="../images/barc6.jpg" alt="Photo 7" />
+      <img src="../images/barc7.jpg" alt="Photo 8" />
+      <img src="../images/barc8.jpg" alt="Photo 9" />
+    </div>
+
+    <script>
+      // Open the sidebar
+      function openSidebar() {
+        document.getElementById("sidebar").style.width = "250px";
+      }
+
+      // Close the sidebar
+      function closeSidebar() {
+        document.getElementById("sidebar").style.width = "0";
+      }
+
+      // Toggle grid padding
+      function toggleGridPadding() {
+        const grid = document.getElementById("photoGrid");
+        if (grid.classList.contains("photo-grid-padding")) {
+          grid.classList.remove("photo-grid-padding");
+          document.getElementById("button1").innerText = "Postcard Format";
+        } else {
+          grid.classList.add("photo-grid-padding");
+          document.getElementById("button1").innerText = "Portfolio Format";
+        }
+      }
+
+      // Toggle fun facts visibility
+      function toggleFunFacts() {
+        const funFactsList = document.getElementById("funFactsList");
+        if (funFactsList.style.display === "none") {
+          funFactsList.style.display = "block";
+        } else {
+          funFactsList.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

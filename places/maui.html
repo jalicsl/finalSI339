@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Maui</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/placeStyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <span id="closeSidebar" onclick="closeSidebar()">&times;</span>
+      <a href="../index.html">Home</a>
+      <a href="budapest.html">Budapest</a>
+      <a href="Lofoten.html">Lofoten</a>
+      <a href="tokyo.html">Tokyo</a>
+      <a href="barcelona.html">Barcelona</a>
+    </div>
+
+    <!-- Header -->
+    <div id="header">
+      <h1>Maui, Hawaii</h1>
+      <button id="button2" onclick="openSidebar()">Menu 
+        <i class="fa fa-bars"></i>
+      </button>
+      <p>
+        <button id="button1" onclick="toggleGridPadding()">
+          Postcard Format
+        </button>
+      </p>
+      <div class="fun-facts">
+        <button id="button1" onclick="toggleFunFacts()">Fun Facts</button>
+        <ul id="funFactsList" style="display: none">
+          <li>
+            Maui is home to Haleakalā, the world’s largest dormant volcano. It rises over 10,000 feet above sea level, and visitors can watch spectacular sunrises and sunsets from its summit, which is also a national park.
+          </li>
+          <li>
+            The scenic Hana Highway is one of the most famous drives in the world, with 620 curves and 59 bridges. This 52-mile stretch takes travelers through lush rainforests, past waterfalls, and along rugged coastline.
+          </li>
+          <li>
+            Every winter, thousands of humpback whales migrate to the warm waters around Maui. It is one of the best places in the world for whale watching, with sightings often visible from shore or by boat tours.
+          </li>
+          <li>
+            Maui has a rich history in pineapple farming. The island was once the world's largest producer of pineapples, and today, visitors can tour the historic pineapple plantations and taste fresh pineapples.
+          </li>
+          <li>
+            Maui is known for its dramatic landscapes, from lush tropical rainforests to dry desert-like areas and volcanic craters. The island features diverse ecosystems that offer outdoor activities like hiking, snorkeling, and exploring hidden beaches.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Photo Grid -->
+    <div id="photoGrid" class="photo-grid">
+      <img src="../images/haw.jpg" alt="Photo 1" />
+      <img src="../images/haw1.jpg" alt="Photo 2" />
+      <img src="../images/haw2.jpg" alt="Photo 3" />
+      <img src="../images/haw3.jpg" alt="Photo 4" />
+      <img src="../images/haw4.jpg" alt="Photo 5" />
+      <img src="../images/haw5.jpg" alt="Photo 6" />
+      <img src="../images/haw6.jpg" alt="Photo 7" />
+      <img src="../images/haw7.jpg" alt="Photo 8" />
+      <img src="../images/haw8.jpg" alt="Photo 9" />
+    </div>
+
+    <script>
+      // Open the sidebar
+      function openSidebar() {
+        document.getElementById("sidebar").style.width = "250px";
+      }
+
+      // Close the sidebar
+      function closeSidebar() {
+        document.getElementById("sidebar").style.width = "0";
+      }
+
+      // Toggle grid padding
+      function toggleGridPadding() {
+        const grid = document.getElementById("photoGrid");
+        if (grid.classList.contains("photo-grid-padding")) {
+          grid.classList.remove("photo-grid-padding");
+          document.getElementById("button1").innerText = "Postcard Format";
+        } else {
+          grid.classList.add("photo-grid-padding");
+          document.getElementById("button1").innerText = "Portfolio Format";
+        }
+      }
+
+      // Toggle fun facts visibility
+      function toggleFunFacts() {
+        const funFactsList = document.getElementById("funFactsList");
+        if (funFactsList.style.display === "none") {
+          funFactsList.style.display = "block";
+        } else {
+          funFactsList.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

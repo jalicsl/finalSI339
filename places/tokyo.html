@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tokyo</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/placeStyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <span id="closeSidebar" onclick="closeSidebar()">&times;</span>
+      <a href="../index.html">Home</a>
+      <a href="budapest.html">Budapest</a>
+      <a href="Lofoten.html">Lofoten</a>
+      <a href="maui.html">Maui</a>
+      <a href="barcelona.html">Barcelona</a>
+    </div>
+
+    <!-- Header -->
+    <div id="header">
+      <h1>Tokyo, Japan</h1>
+      <button id="button2" onclick="openSidebar()">Menu 
+        <i class="fa fa-bars"></i>
+      </button>
+      <p>
+        <button id="button1" onclick="toggleGridPadding()">
+          Postcard Format
+        </button>
+      </p>
+      <div class="fun-facts">
+        <button id="button1" onclick="toggleFunFacts()">Fun Facts</button>
+        <ul id="funFactsList" style="display: none">
+          <li>
+            Tokyo is one of the largest cities in the world, with a population
+            exceeding 37 million in its metropolitan area.
+          </li>
+          <li>
+            Tokyo’s public transportation system is one of the most efficient
+            and extensive in the world. The Tokyo Metro and train lines serve
+            millions of passengers daily, and the punctuality of the trains is
+            legendary.
+          </li>
+          <li>
+            Tokyo Skytree, standing at 634 meters (2,080 feet), is the tallest
+            tower in Japan and the second tallest structure in the world. It
+            offers stunning panoramic views of the city and beyond.
+          </li>
+          <li>
+            Tokyo holds the record for the most Michelin-starred restaurants of
+            any city in the world, offering a wide range of dining options from
+            street food to luxury fine dining.
+          </li>
+          <li>
+            Tokyo is famous for blending traditional culture with modern
+            innovation. You can visit serene temples, shrines, and traditional
+            gardens, then step into vibrant shopping districts like Shibuya and
+            Harajuku, where you’ll find cutting-edge fashion, technology, and
+            entertainment.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Photo Grid -->
+    <div id="photoGrid" class="photo-grid">
+      <img src="../images/tok.jpg" alt="Photo 1" />
+      <img src="../images/tok1.jpg" alt="Photo 2" />
+      <img src="../images/tok2.jpg" alt="Photo 3" />
+      <img src="../images/tok3.jpg" alt="Photo 4" />
+      <img src="../images/tok4.jpg" alt="Photo 5" />
+      <img src="../images/tok5.jpg" alt="Photo 6" />
+      <img src="../images/tok6.jpg" alt="Photo 7" />
+      <img src="../images/tok7.jpg" alt="Photo 8" />
+      <img src="../images/tok8.jpg" alt="Photo 9" />
+    </div>
+
+    <script>
+      // Open the sidebar
+      function openSidebar() {
+        document.getElementById("sidebar").style.width = "250px";
+      }
+
+      // Close the sidebar
+      function closeSidebar() {
+        document.getElementById("sidebar").style.width = "0";
+      }
+
+      // Toggle grid padding
+      function toggleGridPadding() {
+        const grid = document.getElementById("photoGrid");
+        if (grid.classList.contains("photo-grid-padding")) {
+          grid.classList.remove("photo-grid-padding");
+          document.getElementById("button1").innerText = "Postcard Format";
+        } else {
+          grid.classList.add("photo-grid-padding");
+          document.getElementById("button1").innerText = "Portfolio Format";
+        }
+      }
+
+      // Toggle fun facts visibility
+      function toggleFunFacts() {
+        const funFactsList = document.getElementById("funFactsList");
+        if (funFactsList.style.display === "none") {
+          funFactsList.style.display = "block";
+        } else {
+          funFactsList.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Barcelona</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/placeStyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <span id="closeSidebar" onclick="closeSidebar()">&times;</span>
+      <a href="../index.html">Home</a>
+      <a href="budapest.html">Budapest</a>
+      <a href="Lofoten.html">Lofoten</a>
+      <a href="maui.html">Maui</a>
+      <a href="tokyo.html">Tokyo</a>
+    </div>
+
+    <!-- Header -->
+    <div id="header">
+      <h1>Cinque Terre, Italy</h1>
+      <button id="button2" onclick="openSidebar()">Menu 
+        <i class="fa fa-bars"></i>
+      </button>
+      <p>
+        <button id="button1" onclick="toggleGridPadding()">
+          Postcard Format
+        </button>
+      </p>
+      <div class="fun-facts">
+        <button id="button1" onclick="toggleFunFacts()">Fun Facts</button>
+        <ul id="funFactsList" style="display: none">
+          <li>
+            The name "Cinque Terre" translates to "Five Lands," referring to the five colorful, cliffside villages: Monterosso al Mare, Vernazza, Corniglia, Manarola, and Riomaggiore. The entire area, including its coastline and hillsides, is a UNESCO World Heritage Site.
+          </li>
+          <li>
+            Cars are banned in the villages! Instead, visitors travel by train, boat, or on foot via scenic hiking trails that connect the villages. The absence of cars helps preserve the area's charm and tranquility.
+          </li>
+          <li>
+            Cinque Terre is famous for its terraced hillsides, where locals have grown grapes and olives for over 1,000 years. The unique landscape is supported by over 4,000 miles of dry stone walls, making it a labor-intensive yet stunning feat of engineering.
+          </li>
+          <li>
+            The region produces a rare dessert wine called Sciacchetrà, made from partially dried grapes. It's said that Sciacchetrà was favored by poets and explorers, including Pliny the Elder, who praised the wine in ancient Roman times.
+          </li>
+          <li>
+            The famous "Blue Path" is a scenic hiking trail that connects all five villages. The trail offers breathtaking views of the Mediterranean Sea, but some sections can be challenging. One stretch, the Via dell'Amore (Lover's Lane) between Riomaggiore and Manarola, is much easier and particularly romantic.
+        </ul>
+      </div>
+    </div>
+
+    <!-- Photo Grid -->
+    <div id="photoGrid" class="photo-grid">
+      <img src="../images/ital.jpg" alt="Photo 1" />
+      <img src="../images/ital1.jpg" alt="Photo 2" />
+      <img src="../images/ital2.jpg" alt="Photo 3" />
+      <img src="../images/ital3.jpg" alt="Photo 4" />
+      <img src="../images/ital4.jpg" alt="Photo 5" />
+      <img src="../images/ital5.jpg" alt="Photo 6" />
+      <img src="../images/ital6.jpg" alt="Photo 7" />
+      <img src="../images/ital7.jpg" alt="Photo 8" />
+      <img src="../images/ital8.jpg" alt="Photo 9" />
+    </div>
+
+    <script>
+      // Open the sidebar
+      function openSidebar() {
+        document.getElementById("sidebar").style.width = "250px";
+      }
+
+      // Close the sidebar
+      function closeSidebar() {
+        document.getElementById("sidebar").style.width = "0";
+      }
+
+      // Toggle grid padding
+      function toggleGridPadding() {
+        const grid = document.getElementById("photoGrid");
+        if (grid.classList.contains("photo-grid-padding")) {
+          grid.classList.remove("photo-grid-padding");
+          document.getElementById("button1").innerText = "Postcard Format";
+        } else {
+          grid.classList.add("photo-grid-padding");
+          document.getElementById("button1").innerText = "Portfolio Format";
+        }
+      }
+
+      // Toggle fun facts visibility
+      function toggleFunFacts() {
+        const funFactsList = document.getElementById("funFactsList");
+        if (funFactsList.style.display === "none") {
+          funFactsList.style.display = "block";
+        } else {
+          funFactsList.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
